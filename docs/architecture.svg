@@ -162,10 +162,10 @@
   <!-- Game Categories -->
   <rect x="80" y="600" width="300" height="120" rx="10" fill="#EBF8FF" stroke="#3182CE" stroke-width="1"/>
   <text x="230" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2B6CB0">
-    게임 카테고리 (13개)
+    게임 카테고리 (12개)
   </text>
   <text x="100" y="645" font-family="Arial, sans-serif" font-size="11" fill="#2B6CB0">숫자: ones, twos, threes, fours, fives, sixes</text>
-  <text x="100" y="660" font-family="Arial, sans-serif" font-size="11" fill="#2B6CB0">조합: three_of_kind, four_of_kind, full_house</text>
+  <text x="100" y="660" font-family="Arial, sans-serif" font-size="11" fill="#2B6CB0">조합: four_of_kind, full_house</text>
   <text x="100" y="675" font-family="Arial, sans-serif" font-size="11" fill="#2B6CB0">스트레이트: small_straight, large_straight</text>
   <text x="100" y="690" font-family="Arial, sans-serif" font-size="11" fill="#2B6CB0">특수: yacht, chance</text>
 
@@ -184,7 +184,7 @@
   <text x="910" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#B7791F">
     게임 규칙
   </text>
-  <text x="780" y="645" font-family="Arial, sans-serif" font-size="11" fill="#B7791F">• 2명 플레이어, 13라운드</text>
+  <text x="780" y="645" font-family="Arial, sans-serif" font-size="11" fill="#B7791F">• 2명 플레이어, 12라운드</text>
   <text x="780" y="660" font-family="Arial, sans-serif" font-size="11" fill="#B7791F">• 턴당 최대 3번 주사위 굴리기</text>
   <text x="780" y="675" font-family="Arial, sans-serif" font-size="11" fill="#B7791F">• 카테고리별 1회 점수 기록</text>
   <text x="780" y="690" font-family="Arial, sans-serif" font-size="11" fill="#B7791F">• 총점 높은 플레이어 승리</text>

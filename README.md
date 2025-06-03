@@ -11,7 +11,7 @@
 - **게임 종료**: 모든 카테고리 완성 시
 - **승리 조건**: 총점이 높은 플레이어
 
-### 점수 카테고리 (13개)
+### 점수 카테고리 (12개)
 
 #### 상단부 (Ones ~ Sixes)
 - **Ones**: 1이 나온 주사위 개수 × 1점
@@ -22,7 +22,6 @@
 - **Sixes**: 6이 나온 주사위 개수 × 6점
 
 #### 하단부 (Special Categories)
-- **Three of a Kind**: 같은 숫자 3개 이상 → 전체 주사위 합
 - **Four of a Kind**: 같은 숫자 4개 이상 → 전체 주사위 합
 - **Full House**: 3개 + 2개 조합 → 25점
 - **Small Straight**: 연속된 4숫자 → 30점
@@ -82,6 +81,10 @@ threading.Thread(target=self.receive_messages, daemon=True).start()
 {"type": "dice_result", "data": {"dice": [1,2,3,4,5], "player": 0, "rolls_left": 2}}
 ```
 
+* 통신 프로토콜로 json 포맷 사용함
+* 작은 파일 크기를 가져 효과적으로 전달할 수 있고, 가시성과 가독성도 뛰어남
+* 원하는 클래스를 손쉽게 설계할 수 있어 선택함
+
 ## 시스템 아키텍처
 
 ![시스템 아키텍처](docs/architecture.svg)
@@ -124,6 +127,12 @@ threading.Thread(target=self.receive_messages, daemon=True).start()
 - UV (Ultra-fast Python package installer)
 
 ### 프로젝트 설정
+
+* [uv 설치](https://docs.astral.sh/uv/#installation)
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 
 ```bash
 # 프로젝트 의존성 설치
