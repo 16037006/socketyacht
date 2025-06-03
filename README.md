@@ -4,6 +4,8 @@
 
 ## 게임 룰 (Yacht Dice)
 
+[Wikipedia](https://en.wikipedia.org/wiki/Yacht_(dice_game)#Scoring)
+
 ### 기본 구조
 - **플레이어**: 2명
 - **주사위**: 5개
