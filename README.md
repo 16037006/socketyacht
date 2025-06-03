@@ -84,6 +84,8 @@ threading.Thread(target=self.receive_messages, daemon=True).start()
 
 ## 시스템 아키텍처
 
+![시스템 아키텍처](docs/architecture.svg)
+
 ### 동작 흐름
 
 ```
