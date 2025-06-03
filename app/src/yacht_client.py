@@ -97,7 +97,8 @@ class YachtClient:
             if data["player"] == self.player_id:  # 본인의 주사위 결과만 처리
                 self.current_dice = data["dice"]
                 self.rolls_left = data["rolls_left"]
-                print(f"\n주사위 결과: {self.current_dice}")
+                print(f"\n주사위 결과:")
+                print(self.render_ascii_art_dice(self.current_dice))
                 print(f"남은 굴리기: {self.rolls_left}")
 
                 # 굴리기 횟수에 따라 다음 입력 상태 결정
@@ -341,7 +342,79 @@ class YachtClient:
                 print("\n게임 종료")
             finally:
                 self.socket.close()
-
+    
+    @staticmethod
+    def render_ascii_art_dice(dices: list[int]) -> str:
+        """주사위를 ASCII art로 렌더링
+        
+        Args:
+            dices: 1-6 범위의 주사위 값 리스트
+            
+        Returns:
+            ASCII art로 표현된 주사위 문자열
+        """
+        # 각 주사위 면의 ASCII 패턴 정의 (5줄 × 7문자)
+        patterns = {
+            1: [
+                "┌─────┐",
+                "│     │",
+                "│  ●  │", 
+                "│     │",
+                "└─────┘"
+            ],
+            2: [
+                "┌─────┐",
+                "│ ●   │",
+                "│     │",
+                "│   ● │", 
+                "└─────┘"
+            ],
+            3: [
+                "┌─────┐",
+                "│ ●   │",
+                "│  ●  │",
+                "│   ● │",
+                "└─────┘"
+            ],
+            4: [
+                "┌─────┐",
+                "│ ● ● │",
+                "│     │",
+                "│ ● ● │",
+                "└─────┘"
+            ],
+            5: [
+                "┌─────┐",
+                "│ ● ● │", 
+                "│  ●  │",
+                "│ ● ● │",
+                "└─────┘"
+            ],
+            6: [
+                "┌─────┐",
+                "│ ● ● │",
+                "│ ● ● │", 
+                "│ ● ● │",
+                "└─────┘"
+            ]
+        }
+        
+        if not dices:
+            return ""
+        
+        # 각 주사위의 패턴 가져오기
+        dice_patterns = [patterns[dice] for dice in dices]
+        
+        # 5줄로 구성된 결과 생성
+        result_lines = []
+        for line_idx in range(5):
+            line_parts = []
+            for pattern in dice_patterns:
+                line_parts.append(pattern[line_idx])
+            # 주사위 사이에 공백 하나 추가
+            result_lines.append(" ".join(line_parts))
+        
+        return "\n".join(result_lines)
 
 if __name__ == "__main__":
     client = YachtClient()
